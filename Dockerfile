@@ -1,11 +1,8 @@
 # use latest Node LTS
-FROM node:8-stretch
+FROM node:carbon-alpine
 
 # backport up to date tools
-RUN echo "deb http://ftp.us.debian.org/debian sid main" >> /etc/apt/sources.list \
-	&& apt update 
-	&& apt install -y git zip
-	&& apt-get clean
-	
+RUN apk update && apk add git zip
+
 # install Firebase CLI
 RUN yarn global add firebase-tools@4.2.1
