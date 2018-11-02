@@ -5,4 +5,4 @@ FROM node:carbon-alpine
 RUN apk update && apk add git zip
 
 # install Firebase CLI
-RUN yarn global add firebase-tools@4.2.1
+RUN yarn global add firebase-tools
