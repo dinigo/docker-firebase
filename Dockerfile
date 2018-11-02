@@ -3,8 +3,8 @@ FROM node:8-stretch
 
 # backport up to date tools
 RUN echo "deb http://ftp.us.debian.org/debian sid main" >> /etc/apt/sources.list \
-	&& apt-get update && apt-get install -y \
-		git \
+	&& apt update 
+	&& apt install -y git zip
 	&& apt-get clean
 	
 # install Firebase CLI
